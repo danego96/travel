@@ -17,11 +17,11 @@ class TravelFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->country();
+        $name = $this->faker->unique()->country();
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'description' => $this->faker->text(200),
+            'description' => $this->faker->text(100),
             'number_of_days' => $this->faker->numberBetween(1, 30),
             'is_public' => $this->faker->boolean(),
         ];
